@@ -538,7 +538,7 @@ const IntroPage: React.FC = () => {
              <div className="bg-gradient-to-r from-indigo-50 to-purple-50 rounded-2xl p-6 border-l-4 border-indigo-600">
                <h4 className="font-bold text-gray-900 text-lg flex items-center gap-3 mb-3">
                  <FaHandBackFist className="text-indigo-600 text-xl" />
-                 Liên hệ với ví dụ cụ thể
+                 Liên hệ với ví dụ cụ thể (Kiểm soát công nghệ)
                </h4>
                <ul className="list-disc list-inside space-y-2 mt-2">
                  <li>Thiết lập quy tắc gia đình về quyền riêng tư số và thời gian không thiết bị; dùng công cụ kiểm soát của chính mỗi người (giới hạn thời gian, không bắt buộc chia sẻ mật khẩu).</li>
