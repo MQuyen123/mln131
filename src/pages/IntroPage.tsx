@@ -18,6 +18,8 @@ import {
   FaHeart,
   FaHandshake,
   FaGraduationCap,
+  FaHandBackFist,
+  FaHandPointDown,
 } from "react-icons/fa6";
 
 // ===== ASSETS =====
@@ -500,27 +502,56 @@ const IntroPage: React.FC = () => {
              <div className="bg-gradient-to-r from-green-50 to-blue-50 rounded-2xl p-6 border-l-4 border-green-600">
                <h4 className="font-bold text-gray-900 text-lg flex items-center gap-3 mb-3">
                  <FaGraduationCap className="text-green-600 text-xl" />
-                 Tư duy biện chứng & giải pháp tổng hợp
+                 Tư duy biện chứng về nguyên nhân – điều kiện – giải pháp
                </h4>
-               <p>Kết hợp <b>vật chất</b> (an sinh, dịch vụ, nhà ở) với <b>tinh thần</b> (giá trị, pháp luật, văn hoá) để giải quyết gốc rễ mâu thuẫn giữa kỳ vọng vai trò và điều kiện thực tế.</p>
+               <ul className="list-disc list-inside space-y-2 mt-2">
+                 <li><b>Nguyên nhân gốc:</b>  Mâu thuẫn giữa kỳ vọng vai trò (giới, kinh tế, cảm xúc) với điều kiện vật chất – thể chế chưa tương thích; hiểu biết pháp luật – bình đẳng giới còn hạn chế.
+                 </li>
+                 <li><b>Điều kiện bảo đảm:</b> Hoàn thiện pháp luật và dịch vụ công (tư vấn, bảo vệ khẩn cấp); nâng cao dân trí số và đạo đức số; củng cố phong trào “gia đình văn hóa”.
+                 </li>
+                 <li><b>Giải pháp tổng hợp:</b> Kết hợp vật chất (an sinh, dịch vụ chăm sóc, nhà ở) với tinh thần (giá trị, pháp luật, văn hóa) để giải quyết đồng bộ.
+                 </li>
+               </ul>
              </div>
               <div className="bg-gradient-to-r from-pink-50 to-purple-50 rounded-2xl p-6 border-l-4 border-pink-600">
                <h4 className="font-bold text-gray-900 text-lg flex items-center gap-3 mb-3">
                  <FaHeart className="text-pink-600 text-xl" />
-                 Bình đẳng giới & Hạnh phúc
+                 Bình đẳng giới – hạnh phúc gia đình
                </h4>
-               <p>Tái phân công lao động công bằng, ghi nhận giá trị việc chăm sóc. Giáo dục kỹ năng giao tiếp bất bạo lực, quản trị cảm xúc và tài chính minh bạch.</p>
+               <ul className="list-disc list-inside space-y-2 mt-2">
+                 <li><b>Tái phân công</b> lao động gia đình theo nguyên tắc công bằng; ghi nhận công việc chăm sóc như một đóng góp kinh tế – xã hội.</li>
+                 <li><b>Giáo dục kỹ năng giao tiếp bất bạo lực</b>, quản trị cảm xúc, thỏa thuận tài chính minh bạch.</li>
+                 <li><b>Phát triển các lớp “làm cha tích cực”</b> , nhấn mạnh trách nhiệm, kỷ luật, nêu gương.</li>
+               </ul>
              </div>
               <div className="bg-gradient-to-r from-indigo-50 to-purple-50 rounded-2xl p-6 border-l-4 border-indigo-600">
                <h4 className="font-bold text-gray-900 text-lg flex items-center gap-3 mb-3">
                  <FaHandshake className="text-indigo-600 text-xl" />
-                 Cơ chế phối hợp: Gia đình – Xã hội – Nhà nước
+                 Gia đình – xã hội – Nhà nước: cơ chế phối hợp
                </h4>
                <ul className="list-disc list-inside space-y-2 mt-2">
-                 <li><b>Nhà nước:</b> Hoàn thiện pháp luật, chính sách thai sản, dịch vụ tư vấn.</li>
-                 <li><b>Xã hội:</b> Trường học, đoàn thể, truyền thông kiến tạo môi trường văn hóa số lành mạnh.</li>
-                 <li><b>Gia đình:</b> Xây dựng quy ước "5 tôn trọng" (pháp luật, riêng tư, thời gian chung, ngôn từ, tài chính) và "3 không" (không bạo lực, không định kiến, không im lặng).</li>
+                 <li><b>Nhà nước:</b>  Pháp luật phòng, chống bạo lực gia đình; chính sách thai sản, dịch vụ trông trẻ; tư vấn hôn nhân – gia đình; bảo vệ dữ liệu cá nhân.</li>
+                 <li><b>Xã hội:</b> Trường học, đoàn thể, tôn giáo, truyền thông kiến tạo môi trường văn hóa số lành mạnh.</li>
+                 <li><b>Gia đình:</b> Xây dựng quy ước “5 tôn trọng” (pháp luật, quyền riêng tư, thời gian chung, ngôn từ giao tiếp, thỏa thuận tài chính), thực hành “3 không” (không bạo lực, không định kiến giới, không im lặng).</li>
                </ul>
+             </div>
+             <div className="bg-gradient-to-r from-indigo-50 to-purple-50 rounded-2xl p-6 border-l-4 border-indigo-600">
+               <h4 className="font-bold text-gray-900 text-lg flex items-center gap-3 mb-3">
+                 <FaHandBackFist className="text-indigo-600 text-xl" />
+                 Liên hệ với ví dụ cụ thể
+               </h4>
+               <ul className="list-disc list-inside space-y-2 mt-2">
+                 <li>Thiết lập quy tắc gia đình về quyền riêng tư số và thời gian không thiết bị; dùng công cụ kiểm soát của chính mỗi người (giới hạn thời gian, không bắt buộc chia sẻ mật khẩu).</li>
+                 <li>Kênh trợ giúp: điểm tư vấn cộng đồng, tổ hòa giải; khi có nguy cơ bạo lực, áp dụng lệnh bảo vệ khẩn cấp.</li>
+                 <li>Chỉ số đánh giá: giảm tần suất yêu cầu mật khẩu/kiểm tra điện thoại; tăng số cặp đôi ký cam kết “an toàn số”.</li>
+               </ul>
+             </div>
+             <div className="bg-gradient-to-r from-indigo-50 to-purple-50 rounded-2xl p-6 border-l-4 border-indigo-600">
+               <h4 className="font-bold text-gray-900 text-lg flex items-center gap-3 mb-3">
+                 <FaHandPointDown className="text-indigo-600 text-xl" />
+                 Kết luận
+               </h4>
+               <p><b>Quan điểm Mác – Lênin về con người và đời sống xã hội cho thấy:</b> để xây dựng gia đình Việt Nam trong thời kỳ quá độ lên CNXH, cần kết hợp đồng bộ điều kiện vật chất với xây dựng ý thức – đạo đức, bảo đảm bình đẳng giới, và thiết kế cơ chế phối hợp gia đình – xã hội – Nhà nước. Khi vận dụng vào vấn đề kiểm soát công nghệ trong quan hệ gia đình, bộ giải pháp “pháp luật – giáo dục – văn hóa số – chỉ số đo lường” giúp chuyển hóa lý luận thành thay đổi hành vi cụ thể.</p>
              </div>
           </div>
         </Collapsible>
