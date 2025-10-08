@@ -20,6 +20,7 @@ import {
   FaGraduationCap,
   FaHandBackFist,
   FaHandPointDown,
+  FaShareNodes,
 } from "react-icons/fa6";
 
 // ===== ASSETS =====
@@ -323,6 +324,49 @@ const QuickNav: React.FC = () => {
   );
 };
 
+type CiteLink = { href: string; label: string };
+
+const getHost = (url: string) => {
+  try {
+    const host = new URL(url).hostname.replace(/^www\./, "");
+    return host;
+  } catch {
+    return "";
+  }
+};
+
+const toneStyles = {
+  red: { ring: "ring-red-100", badge: "bg-red-600/10 text-red-700", icon: "text-red-700" },
+  orange: { ring: "ring-orange-100", badge: "bg-orange-600/10 text-orange-700", icon: "text-orange-700" },
+  blue: { ring: "ring-blue-100", badge: "bg-blue-600/10 text-blue-700", icon: "text-blue-700" },
+  purple: { ring: "ring-purple-100", badge: "bg-purple-600/10 text-purple-700", icon: "text-purple-700" },
+};
+
+const CiteBox: React.FC<{ tone: keyof typeof toneStyles; links: CiteLink[] }> = ({ tone, links }) => {
+  const c = toneStyles[tone];
+  return (
+    <div className={`mt-3 rounded-xl bg-white p-4 md:p-5 ring-1 ring-inset ${c.ring} shadow-sm`}>
+      <div className="flex items-center gap-2">
+        <span className={`inline-flex h-8 w-8 items-center justify-center rounded-lg ${c.badge} ring-1 ring-inset ${c.ring}`}>
+          <FaNewspaper className="text-base" />
+        </span>
+        <p className="text-[14px] md:text-base font-semibold text-slate-800">Nguồn tham khảo</p>
+      </div>
+
+      <ul className="mt-3 space-y-2">
+        {links.map((l) => (
+          <li key={l.href} className="group flex items-start gap-3">
+            <FaUpRightFromSquare className={`mt-1 shrink-0 ${c.icon}`} />
+            <div>
+              <LinkOut href={l.href}>{l.label}</LinkOut>
+            </div>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+};
+
 
 // ====== MAIN PAGE COMPONENT ======
 const IntroPage: React.FC = () => {
@@ -464,28 +508,191 @@ const IntroPage: React.FC = () => {
           idAnchor="thuctien"
           title="Thực tiễn Việt Nam hiện nay"
           subtitle="Những vấn đề nổi bật và thách thức đương đại"
-          icon={<FaChartLine />}
-        >
+          icon={<FaChartLine />}>
           <div className="space-y-6">
-            <div className="bg-red-50 rounded-xl p-4 border border-red-200">
-              <p><b className="text-red-700">Ly hôn gia tăng ở nhóm trẻ đô thị:</b> Do xung đột vai trò (nghề nghiệp, thu nhập, chăm sóc con). 60% các vụ ly hôn ở thành thị liên quan đến mâu thuẫn này.</p>
-            </div>
-            <div className="bg-orange-50 rounded-xl p-4 border border-orange-200">
-              <p><b className="text-orange-700">Bạo lực gia đình chuyển dạng:</b> Không chỉ thể chất mà còn là tinh thần, kiểm soát qua mạng xã hội, và "bạo lực kinh tế" (kiểm soát tài chính).</p>
-            </div>
-            <div className="bg-blue-50 rounded-xl p-4 border border-blue-200">
-              <p><b className="text-blue-700">Áp lực kinh tế:</b> Chi phí nhà ở, dịch vụ chăm sóc người cao tuổi (cao gấp 7-10 lần người trẻ) làm suy giảm chất lượng thời gian gia đình.</p>
-            </div>
-            <div className="bg-purple-50 rounded-xl p-4 border border-purple-200">
-              <p><b className="text-purple-700">Ảnh hưởng mạng xã hội:</b> Lan truyền chuẩn mực tiêu dùng, tạo so sánh và khủng hoảng giá trị ở thanh thiếu niên.</p>
+            <div className="rounded-2xl bg-red-50 border border-red-100 shadow-sm p-6 md:p-7">
+              <div className="flex items-start gap-3">
+                <div className="mt-0.5 flex h-10 w-10 items-center justify-center rounded-xl bg-red-600/10 text-red-700 ring-1 ring-inset ring-red-600/20">
+                  <FaUsers className="h-4 w-4" />
+                </div>
+                <div className="flex-1">
+                  <h4 className="text-lg md:text-xl font-semibold text-red-800">
+                    Ly hôn gia tăng ở nhóm trẻ đô thị
+                  </h4>
+
+                  <div className="mt-2 flex flex-wrap gap-2">
+                    <span className="inline-flex items-center rounded-full bg-white px-2 md:px-3 py-0.5 text-xs md:text-sm font-medium text-red-700 ring-1 ring-red-200">
+                      25–35 tuổi
+                    </span>
+                    <span className="inline-flex items-center rounded-full bg-white px-2 md:px-3 py-0.5 text-xs md:text-sm font-medium text-red-700 ring-1 ring-red-200">
+                      TP.HCM & Hà Nội
+                    </span>
+                    <span className="inline-flex items-center rounded-full bg-white px-2 md:px-3 py-0.5 text-xs md:text-sm font-medium text-red-700 ring-1 ring-red-200">
+                      ~60% liên quan xung đột vai trò
+                    </span>
+                  </div>
+
+                  <ul className="mt-3 list-disc space-y-1.5 pl-5 text-base leading-relaxed text-gray-800">
+                    <li>Ly hôn tăng rõ ở nhóm 25–35, nổi bật tại các đô thị lớn.</li>
+                    <li>Nguyên nhân chính: xung đột vai trò giữa công việc – thu nhập – chăm sóc con nhỏ.</li>
+                    <li>Nghiên cứu Viện Nghiên cứu Gia đình & Giới: ~60% vụ ly hôn ở đô thị gắn với xung đột này.</li>
+                  </ul>
+
+                  <CiteBox
+                    tone="red"
+                    links={[
+                      {
+                        href: "https://nld.com.vn/hon-22-trieu-nguoi-ly-hon-ly-than-tinh-thanh-nao-cao-nhat-196250301165652065.htm",
+                        label: "Hơn 2,2 triệu người ly hôn/ly thân: tỉnh thành nào cao nhất?",
+                      },
+                    ]}
+                  />
+                </div>
+              </div>
             </div>
 
-            <div className="bg-gradient-to-br from-indigo-600 to-purple-700 rounded-2xl p-6 text-white">
-              <h4 className="font-bold text-xl mb-3 flex items-center gap-2">
-                <span className="w-8 h-8 rounded-lg bg-white/20 flex items-center justify-center">⚠️</span>
+            <div className="rounded-2xl bg-orange-50 border border-orange-100 shadow-sm p-6 md:p-7">
+              <div className="flex items-start gap-3">
+                <div className="mt-0.5 flex h-10 w-10 items-center justify-center rounded-xl bg-orange-600/10 text-orange-700 ring-1 ring-inset ring-orange-600/20">
+                  <FaHandBackFist className="h-4 w-4" />
+                </div>
+                <div className="flex-1">
+                  <h4 className="text-lg md:text-xl font-semibold text-orange-800">
+                    Bạo lực gia đình chuyển dạng
+                  </h4>
+
+                  <div className="mt-2 flex flex-wrap gap-2">
+                    <span className="inline-flex items-center rounded-full bg-white px-2 md:px-3 py-0.5 text-xs md:text-sm font-medium text-orange-700 ring-1 ring-orange-200">
+                      &gt; 15.000 vụ (2024)
+                    </span>
+                    <span className="inline-flex items-center rounded-full bg-white px-2 md:px-3 py-0.5 text-xs md:text-sm font-medium text-orange-700 ring-1 ring-orange-200">
+                      ~30% tinh thần & kiểm soát qua MXH
+                    </span>
+                    <span className="inline-flex items-center rounded-full bg-white px-2 md:px-3 py-0.5 text-xs md:text-sm font-medium text-orange-700 ring-1 ring-orange-200">
+                      Nhận diện “bạo lực kinh tế”
+                    </span>
+                  </div>
+
+                  <ul className="mt-3 list-disc space-y-1.5 pl-5 text-base leading-relaxed text-gray-800">
+                    <li>Không chỉ thể chất mà còn tinh thần, kiểm soát trên mạng xã hội, bạo lực kinh tế.</li>
+                    <li>2024: &gt; 15.000 vụ; ~30% liên quan bạo lực tinh thần & kiểm soát qua MXH (Bộ Công an).</li>
+                    <li>“Bạo lực kinh tế”: kiểm soát thu nhập, cấm đoán chi tiêu… (Hội LHPN Việt Nam).</li>
+                  </ul>
+
+                  <CiteBox
+                    tone="orange"
+                    links={[
+                      {
+                        href: "https://vwu.vn/web/guest/tin-chi-tiet/-/chi-tiet/cac-nhom-bao-luc-gia-%C4%91inh-nguyen-nhan-49367-7.html",
+                        label: "Các nhóm bạo lực gia đình & nguyên nhân (Hội LHPN Việt Nam)",
+                      },
+                    ]}
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div className="rounded-2xl bg-blue-50 border border-blue-100 shadow-sm p-6 md:p-7">
+              <div className="flex items-start gap-3">
+                <div className="mt-0.5 flex h-10 w-10 items-center justify-center rounded-xl bg-blue-600/10 text-blue-700 ring-1 ring-inset ring-blue-600/20">
+                  <FaGraduationCap className="h-4 w-4" />
+                </div>
+                <div className="flex-1">
+                  <h4 className="text-lg md:text-xl font-semibold text-blue-800">
+                    Áp lực kinh tế – nhà ở – dịch vụ chăm sóc
+                  </h4>
+
+                  <div className="mt-2 flex flex-wrap gap-2">
+                    <span className="inline-flex items-center rounded-full bg-white px-2 md:px-3 py-0.5 text-xs md:text-sm font-medium text-blue-700 ring-1 ring-blue-200">
+                      Chi phí NCT 7–10×
+                    </span>
+                    <span className="inline-flex items-center rounded-full bg-white px-2 md:px-3 py-0.5 text-xs md:text-sm font-medium text-blue-700 ring-1 ring-blue-200">
+                      Tầng lớp “sandwich”
+                    </span>
+                    <span className="inline-flex items-center rounded-full bg-white px-2 md:px-3 py-0.5 text-xs md:text-sm font-medium text-blue-700 ring-1 ring-blue-200">
+                      Mục tiêu 2030: 100% khám định kỳ
+                    </span>
+                  </div>
+
+                  <ul className="mt-3 list-disc space-y-1.5 pl-5 text-base leading-relaxed text-gray-800">
+                    <li>Áp lực kinh tế, nhà ở, dịch vụ chăm sóc làm giảm chất lượng thời gian gia đình.</li>
+                    <li>Chi phí y tế & chăm sóc người cao tuổi cao gấp 7–10 lần so với người trẻ (báo Đầu tư).</li>
+                    <li>“Sandwich”: vừa nuôi con nhỏ, vừa chăm cha mẹ già → gánh nặng thời gian – tài chính.</li>
+                    <li>Chương trình 2030: 100% NCT khám sức khỏe định kỳ; 50% xã/phường có mô hình chăm sóc ban ngày.</li>
+                  </ul>
+
+                  <CiteBox
+                    tone="blue"
+                    links={[
+                      {
+                        href: "https://baodautu.vn/ap-luc-kinh-te-va-chi-phi-y-te-cua-gia-hoa-dan-so-d202825.html",
+                        label: "Áp lực kinh tế & chi phí y tế của già hoá dân số (Báo Đầu tư)",
+                      },
+                      {
+                        href: "https://vhu.edu.vn/Resources/Docs/SubDomain/xhtt/2021/Th%E1%BB%B1c%20tr%E1%BA%A1ng%20v%C3%A0%20gi%E1%BA%A3i%20ph%C3%A1p%20ch%C4%83m%20s%C3%B3c%20ng%C6%B0%E1%BB%9Di%20cao%20tu%E1%BB%95i%20%E1%BB%9F%20Vi%E1%BB%87t%20Nam%20hi%E1%BB%87n%20nay.pdf",
+                        label: "Thực trạng & giải pháp chăm sóc người cao tuổi ở Việt Nam (PDF)",
+                      },
+                    ]}
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div className="rounded-2xl bg-purple-50 border border-purple-100 shadow-sm p-6 md:p-7">
+              <div className="flex items-start gap-3">
+                <div className="mt-0.5 flex h-10 w-10 items-center justify-center rounded-xl bg-purple-600/10 text-purple-700 ring-1 ring-inset ring-purple-600/20">
+                  <FaShareNodes className="h-4 w-4" />
+                </div>
+                <div className="flex-1">
+                  <h4 className="text-lg md:text-xl font-semibold text-purple-800">
+                    Ảnh hưởng mạng xã hội
+                  </h4>
+
+                  <div className="mt-2 flex flex-wrap gap-2">
+                    <span className="inline-flex items-center rounded-full bg-white px-2 md:px-3 py-0.5 text-xs md:text-sm font-medium text-purple-700 ring-1 ring-purple-200">
+                      76,95 triệu người dùng (~78,1%)
+                    </span>
+                    <span className="inline-flex items-center rounded-full bg-white px-2 md:px-3 py-0.5 text-xs md:text-sm font-medium text-purple-700 ring-1 ring-purple-200">
+                      &gt;60% TTN gặp nội dung không lành mạnh
+                    </span>
+                  </div>
+
+                  <ul className="mt-3 list-disc space-y-1.5 pl-5 text-base leading-relaxed text-gray-800">
+                    <li>Lan truyền chuẩn mực tiêu dùng & hình ảnh “chuẩn hóa” → so sánh bất lợi, khủng hoảng giá trị ở một bộ phận thanh thiếu niên.</li>
+                    <li>Tác động đến nhận thức xã hội qua 3 kênh: niềm tin – thái độ cộng đồng – kiến thức.</li>
+                  </ul>
+
+                  <CiteBox
+                    tone="purple"
+                    links={[
+                      {
+                        href: "https://scholar.dlu.edu.vn/thuvienso/bitstream/DLU123456789/209913/1/CVv39S212023087.pdf",
+                        label: "Ảnh hưởng của mạng xã hội đến nhận thức xã hội (tài liệu học thuật)",
+                      },
+                      {
+                        href: "https://baodantoc.vn/lan-song-den-tren-mang-xa-hoi-nguy-co-kho-luong-va-giai-phap-ngan-chan-1740716792922.htm",
+                        label: "“Làn sóng đen” trên mạng xã hội: nguy cơ & giải pháp",
+                      },
+                      {
+                        href: "https://thanhnienviet.vn/thanh-nien-the-he-z-truoc-su-phat-trien-cua-mang-xa-hoi-o-viet-nam-hien-nay-209241001111330009.htm",
+                        label: "Thế hệ Z & mạng xã hội ở Việt Nam hiện nay",
+                      },
+                    ]}
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div className="rounded-2xl bg-gradient-to-br from-indigo-600 to-purple-700 p-6 md:p-8 text-white shadow-md">
+              <h4 className="mb-3 flex items-center gap-2 text-lg md:text-lg font-bold">
+                <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-white/20">⚠️</span>
                 Vấn đề cụ thể: Kiểm soát qua công nghệ
               </h4>
-              <p><b>Biểu hiện:</b> Yêu cầu mật khẩu, theo dõi vị trí, kiểm tra điện thoại. <b>Hệ quả:</b> Mất niềm tin, căng thẳng, nguy cơ bạo lực, ảnh hưởng sức khỏe tinh thần gia đình.</p>
+              <p className="text-base text-md md:text-md leading-relaxed text-white/90">
+                <b>Biểu hiện:</b> Yêu cầu mật khẩu, to dõi vị trí, kiểm tra điện thoại.{" "}
+                <br />
+                <b>Hệ quả:</b> Mất niềm tin, căng thẳng, nguy cơ bạo lực, ảnh hưởng sức khỏe tinh thần gia đình.
+              </p>
             </div>
           </div>
         </Collapsible>
