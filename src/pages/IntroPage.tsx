@@ -10,7 +10,6 @@ import {
   FaLightbulb,
   FaChevronDown,
   FaUpRightFromSquare,
-  FaTag,
   FaXmark,
   FaNewspaper,
   FaArrowUp,
@@ -19,12 +18,12 @@ import {
   FaHandshake,
   FaGraduationCap,
   FaHandBackFist,
-  FaHandPointDown,
+
 } from "react-icons/fa6";
 
 // ===== ASSETS =====
 // TODO: Đảm bảo bạn có file ảnh và video này trong thư mục /src/assets
-import familyImage from "../assets/family-hero.png";
+
 const videoUrl = "/assets/video/bg-family.mp4";
 
 // ====== CONFIG & DATA ======
@@ -116,17 +115,6 @@ const fadeInUp: Variants = {
 };
 
 // ====== HELPER COMPONENTS ======
-const LinkOut: React.FC<{ href: string; children: React.ReactNode }> = ({ href, children }) => (
-  <a
-    href={href}
-    target="_blank"
-    rel="noopener noreferrer"
-    className="inline-flex items-center gap-1.5 underline underline-offset-4 decoration-indigo-300 hover:decoration-indigo-600 font-semibold text-indigo-600 hover:text-indigo-800 transition-all"
-  >
-    {children}
-    <FaUpRightFromSquare className="text-xs" />
-  </a>
-);
 
 type CollapsibleProps = {
   title: string;
@@ -543,13 +531,6 @@ const IntroPage: React.FC = () => {
                 <li>Kênh trợ giúp: điểm tư vấn cộng đồng, tổ hòa giải; khi có nguy cơ bạo lực, áp dụng lệnh bảo vệ khẩn cấp.</li>
                 <li>Chỉ số đánh giá: giảm tần suất yêu cầu mật khẩu/kiểm tra điện thoại; tăng số cặp đôi ký cam kết “an toàn số”.</li>
               </ul>
-            </div>
-            <div className="bg-gradient-to-r from-indigo-50 to-purple-50 rounded-2xl p-6 border-l-4 border-indigo-600">
-              <h4 className="font-bold text-gray-900 text-lg flex items-center gap-3 mb-3">
-                <FaHandPointDown className="text-indigo-600 text-xl" />
-                Kết luận
-              </h4>
-              <p><b>Quan điểm Mác – Lênin về con người và đời sống xã hội cho thấy:</b> để xây dựng gia đình Việt Nam trong thời kỳ quá độ lên CNXH, cần kết hợp đồng bộ điều kiện vật chất với xây dựng ý thức – đạo đức, bảo đảm bình đẳng giới, và thiết kế cơ chế phối hợp gia đình – xã hội – Nhà nước. Khi vận dụng vào vấn đề kiểm soát công nghệ trong quan hệ gia đình, bộ giải pháp “pháp luật – giáo dục – văn hóa số – chỉ số đo lường” giúp chuyển hóa lý luận thành thay đổi hành vi cụ thể.</p>
             </div>
           </div>
         </Collapsible>
