@@ -471,6 +471,8 @@ const IntroPage: React.FC = () => {
           icon={<FaScaleBalanced />}
           defaultOpen
         >
+          <div className="bg-green-600"></div>
+          <div className="bg-pink-600"></div>
           <div className="space-y-6">
             {[
               { title: "Quan hệ vật chất – ý thức", items: ["<b>Nền tảng vật chất</b> (điều kiện lao động, thu nhập,...) quy định khả năng khách quan.", "<b>Ý thức xã hội</b> (giá trị, chuẩn mực,...) định hướng hành vi, tạo đồng thuận.", "<b>Tính thống nhất biện chứng:</b> vật chất là điều kiện cần; ý thức – đạo đức là điều kiện đủ."], color: "indigo" },
@@ -508,25 +510,22 @@ const IntroPage: React.FC = () => {
                 </div>
                 <div className="flex-1">
                   <h4 className="text-lg md:text-xl font-semibold text-red-800">
-                    Ly hôn gia tăng ở nhóm trẻ đô thị
+                    Ly hôn gia tăng
                   </h4>
 
                   <div className="mt-2 flex flex-wrap gap-2">
                     <span className="inline-flex items-center rounded-full bg-white px-2 md:px-3 py-0.5 text-xs md:text-sm font-medium text-red-700 ring-1 ring-red-200">
-                      25–35 tuổi
+                      40–44 tuổi
                     </span>
                     <span className="inline-flex items-center rounded-full bg-white px-2 md:px-3 py-0.5 text-xs md:text-sm font-medium text-red-700 ring-1 ring-red-200">
-                      TP.HCM & Hà Nội
-                    </span>
-                    <span className="inline-flex items-center rounded-full bg-white px-2 md:px-3 py-0.5 text-xs md:text-sm font-medium text-red-700 ring-1 ring-red-200">
-                      ~60% liên quan xung đột vai trò
+                      ~60% ly hôn trong 1 - 5 năm
                     </span>
                   </div>
 
                   <ul className="mt-3 list-disc space-y-1.5 pl-5 text-base leading-relaxed text-gray-800">
-                    <li>Ly hôn tăng rõ ở nhóm 25–35, nổi bật tại các đô thị lớn.</li>
+                    <li>Độ tuổi người Việt ly hôn cao nhất là 40-44.</li>
+                    <li>Nghiên cứu Viện Nghiên cứu Gia đình & Giới: ~60% vụ ly hôn sau 1 - 5 năm chung sống.</li>
                     <li>Nguyên nhân chính: xung đột vai trò giữa công việc – thu nhập – chăm sóc con nhỏ.</li>
-                    <li>Nghiên cứu Viện Nghiên cứu Gia đình & Giới: ~60% vụ ly hôn ở đô thị gắn với xung đột này.</li>
                   </ul>
 
                   <CiteBox
@@ -535,6 +534,10 @@ const IntroPage: React.FC = () => {
                       {
                         href: "https://nld.com.vn/hon-22-trieu-nguoi-ly-hon-ly-than-tinh-thanh-nao-cao-nhat-196250301165652065.htm",
                         label: "Hơn 2,2 triệu người ly hôn/ly thân: tỉnh thành nào cao nhất?",
+                      },
+                      {
+                        href: "https://tuoitre.vn/ly-hon-xanh-ao-at-vi-dau-20240802231610047.htm?gidzl=3qY8HHMXGaSEK8z56BPAH0jQWqW6uHaPGmVTJGRXH1f0N8mOLB5471PUZH4Dk10H7mFU46CZt_mr7g5DGW",
+                        label: "'Ly hôn xanh' ào ạt, vì đâu?",
                       },
                     ]}
                   />
@@ -554,10 +557,7 @@ const IntroPage: React.FC = () => {
 
                   <div className="mt-2 flex flex-wrap gap-2">
                     <span className="inline-flex items-center rounded-full bg-white px-2 md:px-3 py-0.5 text-xs md:text-sm font-medium text-orange-700 ring-1 ring-orange-200">
-                      &gt; 15.000 vụ (2024)
-                    </span>
-                    <span className="inline-flex items-center rounded-full bg-white px-2 md:px-3 py-0.5 text-xs md:text-sm font-medium text-orange-700 ring-1 ring-orange-200">
-                      ~30% tinh thần & kiểm soát qua MXH
+                      30.000 vụ mỗi năm
                     </span>
                     <span className="inline-flex items-center rounded-full bg-white px-2 md:px-3 py-0.5 text-xs md:text-sm font-medium text-orange-700 ring-1 ring-orange-200">
                       Nhận diện “bạo lực kinh tế”
@@ -566,13 +566,17 @@ const IntroPage: React.FC = () => {
 
                   <ul className="mt-3 list-disc space-y-1.5 pl-5 text-base leading-relaxed text-gray-800">
                     <li>Không chỉ thể chất mà còn tinh thần, kiểm soát trên mạng xã hội, bạo lực kinh tế.</li>
-                    <li>2024: &gt; 15.000 vụ; ~30% liên quan bạo lực tinh thần & kiểm soát qua MXH (Bộ Công an).</li>
+                    <li>Theo thống kê từ Bộ Văn hóa, Thể thao và Du lịch (VH,TT&DL), Việt Nam vẫn ghi nhận hơn 30.000 vụ bạo lực gia đình mỗi năm.</li>
                     <li>“Bạo lực kinh tế”: kiểm soát thu nhập, cấm đoán chi tiêu… (Hội LHPN Việt Nam).</li>
                   </ul>
 
                   <CiteBox
                     tone="orange"
                     links={[
+                      {
+                        href: "https://baophapluat.vn/bao-luc-gia-dinh-thoi-so-hoa-thach-thuc-moi-giai-phap-moi.html",
+                        label: "Bạo lực gia đình thời số hóa: Thách thức mới - Giải pháp mới",
+                      },
                       {
                         href: "https://vwu.vn/web/guest/tin-chi-tiet/-/chi-tiet/cac-nhom-bao-luc-gia-%C4%91inh-nguyen-nhan-49367-7.html",
                         label: "Các nhóm bạo lực gia đình & nguyên nhân (Hội LHPN Việt Nam)",
@@ -672,18 +676,6 @@ const IntroPage: React.FC = () => {
                   />
                 </div>
               </div>
-            </div>
-
-            <div className="rounded-2xl bg-gradient-to-br from-indigo-600 to-purple-700 p-6 md:p-8 text-white shadow-md">
-              <h4 className="mb-3 flex items-center gap-2 text-lg md:text-lg font-bold">
-                <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-white/20">⚠️</span>
-                Vấn đề cụ thể: Kiểm soát qua công nghệ
-              </h4>
-              <p className="text-base text-md md:text-md leading-relaxed text-white/90">
-                <b>Biểu hiện:</b> Yêu cầu mật khẩu, to dõi vị trí, kiểm tra điện thoại.{" "}
-                <br />
-                <b>Hệ quả:</b> Mất niềm tin, căng thẳng, nguy cơ bạo lực, ảnh hưởng sức khỏe tinh thần gia đình.
-              </p>
             </div>
           </div>
         </Collapsible>
