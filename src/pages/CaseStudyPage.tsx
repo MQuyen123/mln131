@@ -8,9 +8,9 @@ import {
 } from "react-icons/fa6";
 
 // Import AI images (assume these are in assets folder)
-import grokImage from "../assets/family-hero.png";
-import chatgptImage from "../assets/family-hero.png";
-import claudeImage from "../assets/family-hero.png";
+import grokImage from "../assets/musicheroai.png";
+import chatgptImage from "../assets/chatgptImage.webp";
+
 
 const CaseStudyPage: React.FC = () => {
   return (
@@ -81,43 +81,37 @@ const CaseStudyPage: React.FC = () => {
 
           {/* New Section: AI Tools Used */}
           <div>
-            <h2 className="text-xl font-semibold text-gray-800 flex items-center gap-3 mb-4">
-              <FaRobot className="text-indigo-600" />
-              Các AI đã sử dụng
-            </h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-              <div className="text-center p-6 rounded-xl bg-indigo-50 border border-indigo-200 hover:shadow-md transition-all">
-                <img 
-                  src={grokImage} 
-                  alt="Grok AI" 
-                  className="w-16 h-16 mx-auto mb-3 rounded-lg shadow-lg" 
-                  loading="lazy"
-                />
-                <h3 className="font-semibold text-gray-800 mb-1">Grok</h3>
-                <p className="text-sm text-gray-600">Hỗ trợ phân tích biện chứng và gợi ý giải pháp thực tiễn.</p>
-              </div>
-              <div className="text-center p-6 rounded-xl bg-green-50 border border-green-200 hover:shadow-md transition-all">
-                <img 
-                  src={chatgptImage} 
-                  alt="ChatGPT" 
-                  className="w-16 h-16 mx-auto mb-3 rounded-lg shadow-lg" 
-                  loading="lazy"
-                />
-                <h3 className="font-semibold text-gray-800 mb-1">ChatGPT</h3>
-                <p className="text-sm text-gray-600">Tạo dàn ý nội dung và chuẩn hóa thuật ngữ học thuật.</p>
-              </div>
-              <div className="text-center p-6 rounded-xl bg-purple-50 border border-purple-200 hover:shadow-md transition-all">
-                <img 
-                  src={claudeImage} 
-                  alt="Claude AI" 
-                  className="w-16 h-16 mx-auto mb-3 rounded-lg shadow-lg" 
-                  loading="lazy"
-                />
-                <h3 className="font-semibold text-gray-800 mb-1">Claude</h3>
-                <p className="text-sm text-gray-600">Gợi ý câu hỏi tương tác và bộ chỉ số đánh giá (M&E).</p>
-              </div>
-            </div>
-          </div>
+  <h2 className="text-xl font-semibold text-gray-800 flex items-center gap-3 mb-4">
+    <FaRobot className="text-indigo-600" />
+    Các AI đã sử dụng
+  </h2>
+
+  {/* thêm items-stretch; nếu chỉ có 2 thẻ thì nên để lg:grid-cols-2 */}
+  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6 items-stretch">
+    <div className="h-full text-center p-6 rounded-xl bg-indigo-50 border border-indigo-200 hover:shadow-md transition-all flex flex-col">
+      <img
+        src={grokImage}
+        alt="MUSICHERO AI"
+        className="w-16 h-16 mx-auto mb-3 rounded-lg shadow-lg"
+        loading="lazy"
+      />
+      <h3 className="font-semibold text-gray-800 mb-1">MUSICHERO AI</h3>
+      <p className="text-sm text-gray-600 mt-auto">Hỗ trợ trình tạo nhạc bằng AI.</p>
+    </div>
+
+    <div className="h-full text-center p-6 rounded-xl bg-green-50 border border-green-200 hover:shadow-md transition-all flex flex-col">
+      <img
+        src={chatgptImage}
+        alt="ChatGPT"
+        className="w-16 h-16 mx-auto mb-3 rounded-lg shadow-lg"
+        loading="lazy"
+      />
+      <h3 className="font-semibold text-gray-800 mb-1">ChatGPT</h3>
+      <p className="text-sm text-gray-600 mt-auto">Tạo dàn ý nội dung và chuẩn hóa thuật ngữ học thuật.</p>
+    </div>
+  </div>
+</div>
+
 
           {/* Section 3: Giới hạn */}
           <div>

@@ -10,7 +10,6 @@ import {
   FaLightbulb,
   FaChevronDown,
   FaUpRightFromSquare,
-  FaTag,
   FaXmark,
   FaNewspaper,
   FaArrowUp,
@@ -19,13 +18,12 @@ import {
   FaHandshake,
   FaGraduationCap,
   FaHandBackFist,
-  FaHandPointDown,
   FaShareNodes,
 } from "react-icons/fa6";
 
 // ===== ASSETS =====
 // TODO: Đảm bảo bạn có file ảnh và video này trong thư mục /src/assets
-import familyImage from "../assets/family-hero.png";
+
 const videoUrl = "/assets/video/bg-family.mp4";
 
 // ====== CONFIG & DATA ======
@@ -117,17 +115,6 @@ const fadeInUp: Variants = {
 };
 
 // ====== HELPER COMPONENTS ======
-const LinkOut: React.FC<{ href: string; children: React.ReactNode }> = ({ href, children }) => (
-  <a
-    href={href}
-    target="_blank"
-    rel="noopener noreferrer"
-    className="inline-flex items-center gap-1.5 underline underline-offset-4 decoration-indigo-300 hover:decoration-indigo-600 font-semibold text-indigo-600 hover:text-indigo-800 transition-all"
-  >
-    {children}
-    <FaUpRightFromSquare className="text-xs" />
-  </a>
-);
 
 type CollapsibleProps = {
   title: string;
@@ -326,21 +313,25 @@ const QuickNav: React.FC = () => {
 
 type CiteLink = { href: string; label: string };
 
-const getHost = (url: string) => {
-  try {
-    const host = new URL(url).hostname.replace(/^www\./, "");
-    return host;
-  } catch {
-    return "";
-  }
-};
-
 const toneStyles = {
   red: { ring: "ring-red-100", badge: "bg-red-600/10 text-red-700", icon: "text-red-700" },
   orange: { ring: "ring-orange-100", badge: "bg-orange-600/10 text-orange-700", icon: "text-orange-700" },
   blue: { ring: "ring-blue-100", badge: "bg-blue-600/10 text-blue-700", icon: "text-blue-700" },
   purple: { ring: "ring-purple-100", badge: "bg-purple-600/10 text-purple-700", icon: "text-purple-700" },
 };
+
+const LinkOut: React.FC<{ href: string; children: React.ReactNode }> = ({ href, children }) => (
+  <a
+    href={href}
+    target="_blank"
+    rel="noopener noreferrer"
+    className="inline-flex items-center gap-1.5 underline underline-offset-4 decoration-indigo-300 hover:decoration-indigo-600 font-semibold text-indigo-600 hover:text-indigo-800 transition-all"
+  >
+    {children}
+    <FaUpRightFromSquare className="text-xs" />
+  </a>
+);
+
 
 const CiteBox: React.FC<{ tone: keyof typeof toneStyles; links: CiteLink[] }> = ({ tone, links }) => {
   const c = toneStyles[tone];
@@ -483,7 +474,7 @@ const IntroPage: React.FC = () => {
           <div className="space-y-6">
             {[
               { title: "Quan hệ vật chất – ý thức", items: ["<b>Nền tảng vật chất</b> (điều kiện lao động, thu nhập,...) quy định khả năng khách quan.", "<b>Ý thức xã hội</b> (giá trị, chuẩn mực,...) định hướng hành vi, tạo đồng thuận.", "<b>Tính thống nhất biện chứng:</b> vật chất là điều kiện cần; ý thức – đạo đức là điều kiện đủ."], color: "indigo" },
-              { title: "Con người – xã hội: môi trường xã hội hóa", items: ["<b>Chức năng gia đình:</b> tái sản xuất, giáo dục, kinh tế, văn hoá, chăm sóc.", "<b>Con người</b> là chủ thể, mục tiêu & động lực; gia đình nuôi dưỡng năng lực chủ thể."], color: "purple" },
+              { title: "Con người – xã hội: môi trường xã hội hóa", items: ["<b>Chức năng gia đình:</b> tái sản xuất, giáo dục, kinh tế, văn hoá, chăm sóc.", "<b>Con người</b> là chủ thể, mục tiêu & động lực; gia đình nuôi dưỡng năng lực chủ thể."], color: "green" },
               { title: "Sự phát triển biện chứng của gia đình", items: ["Cấu trúc & vai trò gia đình biến đổi theo trình độ lực lượng sản xuất.", "Gia đình Việt Nam tiếp thu giá trị hiện đại đồng thời kế thừa bản sắc dân tộc."], color: "pink" },
             ].map((section, index) => (
               <div key={section.title} className={`bg-gradient-to-r from-${section.color}-50 to-gray-50 rounded-2xl p-6 border-l-4 border-${section.color}-600`}>
@@ -750,13 +741,6 @@ const IntroPage: React.FC = () => {
                 <li>Kênh trợ giúp: điểm tư vấn cộng đồng, tổ hòa giải; khi có nguy cơ bạo lực, áp dụng lệnh bảo vệ khẩn cấp.</li>
                 <li>Chỉ số đánh giá: giảm tần suất yêu cầu mật khẩu/kiểm tra điện thoại; tăng số cặp đôi ký cam kết “an toàn số”.</li>
               </ul>
-            </div>
-            <div className="bg-gradient-to-r from-indigo-50 to-purple-50 rounded-2xl p-6 border-l-4 border-indigo-600">
-              <h4 className="font-bold text-gray-900 text-lg flex items-center gap-3 mb-3">
-                <FaHandPointDown className="text-indigo-600 text-xl" />
-                Kết luận
-              </h4>
-              <p><b>Quan điểm Mác – Lênin về con người và đời sống xã hội cho thấy:</b> để xây dựng gia đình Việt Nam trong thời kỳ quá độ lên CNXH, cần kết hợp đồng bộ điều kiện vật chất với xây dựng ý thức – đạo đức, bảo đảm bình đẳng giới, và thiết kế cơ chế phối hợp gia đình – xã hội – Nhà nước. Khi vận dụng vào vấn đề kiểm soát công nghệ trong quan hệ gia đình, bộ giải pháp “pháp luật – giáo dục – văn hóa số – chỉ số đo lường” giúp chuyển hóa lý luận thành thay đổi hành vi cụ thể.</p>
             </div>
           </div>
         </Collapsible>
