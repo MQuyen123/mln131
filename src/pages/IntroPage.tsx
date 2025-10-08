@@ -365,7 +365,7 @@ const IntroPage: React.FC = () => {
           
           <motion.h1
             variants={fadeInUp}
-            className="text-5xl md:text-7xl font-black bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 bg-clip-text text-transparent leading-tight mb-6"
+            className="text-5xl md:text-7xl font-black bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 bg-clip-text text-transparent leading-tight mb-6 pb-3"
           >
             Gia đình Việt Nam<br />trong thời kỳ quá độ
           </motion.h1>
@@ -419,11 +419,10 @@ const IntroPage: React.FC = () => {
           <div className="relative">
             <FaQuoteLeft className="text-5xl mb-4 opacity-50" />
             <p className="text-xl md:text-2xl font-semibold leading-relaxed mb-6">
-              "Gia đình là tế bào của xã hội. Đó là môi trường đầu tiên hình thành phẩm chất, 
-              đạo đức và năng lực công dân, là cầu nối giữa điều kiện vật chất và ý thức – văn hoá."
+              "Gia đình là tế bào của xã hội; là môi trường đầu tiên hình thành phẩm chất, đạo đức và năng lực công dân; là cầu nối giữa điều kiện vật chất và ý thức – văn hóa trong xã hội mới."
             </p>
             <p className="text-indigo-100 italic">
-              — Quan điểm Mác – Lênin về vai trò gia đình
+              — Quan điểm Mác – Lênin về vai trò gia đình.
             </p>
           </div>
         </motion.div>
@@ -590,16 +589,27 @@ const IntroPage: React.FC = () => {
         </section>
         
         {/* Conclusion */}
-        <section id="ketluan" className="relative text-center bg-gradient-to-br from-indigo-600 to-purple-700 text-white rounded-3xl shadow-2xl p-8 md:p-12 overflow-hidden">
-           <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
-           <div className="absolute bottom-0 left-0 w-48 h-48 bg-purple-400/20 rounded-full blur-2xl translate-y-1/2 -translate-x-1/2" />
-           <div className="relative">
-             <h2 className="text-3xl md:text-4xl font-bold mb-4">Kết luận</h2>
-             <p className="max-w-4xl mx-auto text-lg md:text-xl leading-relaxed text-indigo-100">
-              Để xây dựng gia đình Việt Nam trong thời kỳ quá độ, cần kết hợp đồng bộ <b>điều kiện vật chất</b> với xây dựng <b>ý thức–đạo đức</b>, bảo đảm <b>bình đẳng giới</b>, và thiết kế cơ chế phối hợp <b>gia đình–xã hội–Nhà nước</b>. Vận dụng vào các vấn đề thực tiễn như kiểm soát công nghệ, bộ giải pháp “pháp luật–giáo dục–văn hóa số” giúp chuyển hóa lý luận thành thay đổi hành vi cụ thể.
-             </p>
-           </div>
-        </section>
+       <section
+  id="ketluan"
+  className="relative text-center bg-gradient-to-br from-indigo-600 to-purple-700 text-white rounded-3xl shadow-2xl p-8 md:p-12 overflow-hidden"
+>
+  <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
+  <div className="absolute bottom-0 left-0 w-48 h-48 bg-purple-400/20 rounded-full blur-2xl translate-y-1/2 -translate-x-1/2" />
+
+  <div className="relative">
+    <h2 className="text-3xl font-bold mb-6">Kết luận</h2>
+
+    <p className="max-w-4xl mx-auto text-lg leading-loose tracking-wide">
+      Để xây dựng gia đình Việt Nam trong thời kỳ quá độ, cần kết hợp đồng bộ <b>điều kiện vật chất</b> với xây dựng <b>ý thức – đạo đức</b>,
+      bảo đảm <b>bình đẳng giới</b>, và thiết kế cơ chế phối hợp 
+      <b> <span className="whitespace-nowrap">gia đình – xã hội – Nhà nước</span></b>.
+      Vận dụng vào các vấn đề thực tiễn như kiểm soát công nghệ, bộ giải pháp 
+      “<span className="whitespace-nowrap">pháp luật – giáo dục – văn hoá số</span>”
+      giúp chuyển hoá lý luận thành thay đổi hành vi cụ thể.
+    </p>
+  </div>
+</section>
+
 
       </main>
 
