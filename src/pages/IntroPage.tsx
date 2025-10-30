@@ -1,5 +1,5 @@
 import React from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import type { Variants } from "framer-motion";
 // IMPORT NEW COMPONENT
 import TimelineSection from "../components/TimelineSection"; 
@@ -10,7 +10,6 @@ import {
   FaGlobe,
   FaArrowUp,
   FaUsers,
-  FaLeaf, // Sử dụng icon mới cho tính chất
 } from "react-icons/fa6";
 
 // ===== ASSETS (Dùng lại video) =====
