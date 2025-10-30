@@ -2,8 +2,10 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 
-// ✅ Import đúng file đã convert sang H.264 + AAC
-import videoBg from "../assets/Tao_Video_Chibi_Cuoi_ua.mp4";
+
+
+// Giữ lại import co_dang từ bối cảnh người dùng cung cấp
+import co_dang from "../assets/ava-co.gif"; 
 
 const LandingPage: React.FC = () => {
   const navigate = useNavigate();
@@ -24,19 +26,19 @@ const LandingPage: React.FC = () => {
 
   const introSteps = [
     {
-      title: "Gia đình Việt Nam trong thời kỳ quá độ",
-      subtitle: "“Tế bào của xã hội” dưới ánh sáng duy vật biện chứng & lịch sử",
+      title: "Bản Chất Cuộc Kháng Chiến Chống Mỹ Cứu Nước (1965 – 1975)",
+      subtitle: "Phân tích sự thống nhất giữa Ý chí Dân tộc và Tầm vóc Quốc tế",
       actionText: "Tiếp tục",
     },
     {
-      title: "Mục tiêu học:",
+      title: "Nội dung chính của bài phân tích:",
       listItems: [
-        "Cơ sở lý luận: Vật chất – ý thức, xã hội hóa, phát triển biện chứng",
-        "Thực tiễn VN: Ly hôn, bạo lực, áp lực kinh tế, ảnh hưởng mạng xã hội",
-        "Giải pháp: Bình đẳng giới, phối hợp gia đình – xã hội – Nhà nước",
-        "Vận dụng: Quiz & chỉ số đánh giá (M&E)",
+        "Đường lối lãnh đạo qua 3 giai đoạn chiến lược (1965-1975).",
+        "Luận giải tính chất: Kháng chiến giải phóng dân tộc tối cao.",
+        "Phân tích tầm vóc: Trận tuyến của Chủ nghĩa Quốc tế và phong trào tiến bộ.",
+        "Dẫn chứng: Sử dụng nguồn học thuật và dữ kiện lịch sử (viện trợ, phản chiến).",
       ],
-      actionText: "Bắt đầu học",
+      actionText: "Bắt đầu bài phân tích",
     },
   ];
 
@@ -58,17 +60,13 @@ const LandingPage: React.FC = () => {
 
   return (
     <div className="relative w-full min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Video nền */}
-      <video
-        autoPlay
-        loop
-        muted
-        playsInline
-        preload="auto"
+      {/* Hình ảnh GIF nền */}
+      <img
+        src={co_dang} 
+        alt="Cờ Đảng và Dân tộc"
         className="absolute inset-0 w-full h-full object-cover z-0"
-      >
-        <source src={videoBg} type="video/mp4" />
-      </video>
+        style={{ filter: 'grayscale(50%) brightness(50%)' }} // Làm mờ để chữ nổi bật
+      />
 
       {/* Overlay mờ */}
       <div className="absolute inset-0 bg-black/60 z-10" />
@@ -90,7 +88,7 @@ const LandingPage: React.FC = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
             >
-              Chào mừng đến với MLN131
+              Lịch Sử Đảng Cộng Sản Việt Nam
             </motion.h1>
             <motion.p
               className="text-lg md:text-2xl text-white/90 mb-8 font-medium drop-shadow"
@@ -98,7 +96,7 @@ const LandingPage: React.FC = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.3 }}
             >
-             Gia đình Việt Nam nhìn từ quan điểm Triết học Mác – Lênin về con người và đời sống xã hội
+              Nghiên cứu đường lối lãnh đạo cách mạng cả nước (1965 – 1975)
             </motion.p>
             <motion.button
               onClick={handleStart}
