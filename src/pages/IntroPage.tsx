@@ -1,13 +1,12 @@
 import React from "react";
-import { motion } from "framer-motion";
+import { motion} from "framer-motion";
 import type { Variants } from "framer-motion";
 // IMPORT NEW COMPONENT
 import TimelineSection from "../components/TimelineSection"; 
+import AnalysisItem from "../components/AnalysisItem"; // Import AnalysisItem Component
 // ===== ICONS (Chỉ giữ lại các icon cần thiết) =====
 import {
   FaQuoteLeft,
-  FaLandmark,
-  FaGlobe,
   FaArrowUp,
   FaUsers,
 } from "react-icons/fa6";
@@ -71,38 +70,33 @@ const QuickNav: React.FC = () => {
   );
 };
 
-// Khối chứa các liên kết dẫn chứng (giữ lại và sửa cho đơn giản)
-const CiteBox: React.FC<{ links: { href: string; label: string }[] }> = ({ links }) => {
-  return (
-    <div className={`mt-4 rounded-xl bg-white p-4 md:p-5 ring-1 ring-inset ring-indigo-100 shadow-sm`}>
-      <div className="flex items-center gap-2">
-        <span className={`inline-flex h-8 w-8 items-center justify-center rounded-lg bg-indigo-600/10 text-indigo-700 ring-1 ring-inset ring-indigo-100`}>
-          <FaUsers className="text-base" />
-        </span>
-        <p className="text-[14px] md:text-base font-semibold text-slate-800">Nguồn Tham Khảo và Dẫn Chứng</p>
-      </div>
-
-      <ul className="mt-3 space-y-2">
-        {links.map((l) => (
-          <li key={l.href} className="group flex items-start gap-3">
-            <FaUsers className={`mt-1 shrink-0 text-indigo-600`} />
-            <div>
-              <a
-                href={l.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 underline underline-offset-4 decoration-indigo-300 hover:decoration-indigo-600 font-semibold text-indigo-600 hover:text-indigo-800 transition-all"
-              >
-                {l.label}
-              </a>
-            </div>
-          </li>
-        ))}
-      </ul>
-    </div>
-  );
-};
-
+// Dữ liệu cho Mục II
+const analysisData = [
+    {
+        id: 1,
+        title: "1. Tính Chất Giải Phóng Dân Tộc và Thống Nhất",
+        subtitle: "Cuộc chiến đấu hợp pháp của dân tộc Việt Nam chống lại sự xâm lược và âm mưu chia cắt đất nước.",
+        content: "Mục tiêu Độc lập và Thống nhất là mục tiêu tối thượng, là chính nghĩa quốc gia không thể phủ nhận, được toàn dân hai miền đồng lòng ủng hộ. Thắng lợi bắt nguồn từ đường lối \"dựa vào sức mình là chính\" của Đảng, phát huy tối đa sức mạnh nội tại qua phong trào 'Xẻ dọc Trường Sơn đi cứu nước' và ý chí kiên cường của nhân dân.",
+        imageSrc: "/src/assets/section1.jpg", // Hình ảnh Quốc hội/Biểu tượng chính quyền
+        links: [
+            { href: "#", label: "Mục tiêu Độc lập và Thống nhất (Giáo trình Lịch sử Đảng)" },
+            { href: "#", label: "Sức mạnh Nội tại và Đường Trường Sơn (Dẫn chứng thực tế)" },
+        ],
+        reverse: false,
+    },
+    {
+        id: 2,
+        title: "2. Tầm Vóc Quốc Tế và Trận Tuyến Ý Thức Hệ",
+        subtitle: "Chiến thắng là kết quả của sự kết hợp Sức mạnh Dân tộc với Sức mạnh Thời đại.",
+        content: "Cuộc chiến Việt Nam là tâm điểm đối đầu giữa khối Xã hội Chủ nghĩa (XHCN) và Chủ nghĩa Đế quốc. Đảng đã thành công khi thực hiện nguyên tắc 'Kết hợp sức mạnh dân tộc với sức mạnh thời đại'. Viện trợ quân sự, kỹ thuật và kinh tế khổng lồ từ các nước XHCN là đòn bẩy chiến lược. Thắng lợi trở thành biểu tượng cổ vũ phong trào giải phóng dân tộc toàn cầu.",
+        imageSrc: "/src/assets/3ng.png", // Hình ảnh Marx-Engels-Lenin (Biểu tượng XHCN)
+        links: [
+            { href: "https://www.jstor.org/stable/2007886", label: "Carlyle A. Thayer: Viện trợ XHCN là nhân tố then chốt." },
+            { href: "https://chomsky.info/americanpower01/", label: "Noam Chomsky và Phong trào Phản chiến Quốc tế." },
+        ],
+        reverse: true,
+    }
+];
 
 // Component chính
 const IntroPage: React.FC = () => {
@@ -122,7 +116,9 @@ const IntroPage: React.FC = () => {
       </div>
 
       <div className="pt-4">
-        <QuickNav />
+        <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
+           <QuickNav />
+        </motion.div>
       </div>
 
       {/* Hero Section - Lời Mở Đầu */}
@@ -152,9 +148,11 @@ const IntroPage: React.FC = () => {
           </motion.p>
           <motion.div variants={fadeInUp} className="max-w-4xl mx-auto mt-6">
             <p className="text-base md:text-lg text-gray-700">
-              Mỹ là cường quốc quân sự hàng đầu thế giới, nhưng đã thất bại trước Việt Nam – một dân tộc nhỏ bé. Bản chất của thắng lợi nằm ở sự kết hợp biện chứng giữa ý chí tự lực của dân tộc và sự ủng hộ của các lực lượng tiến bộ toàn cầu.
+              Mỹ là cường quốc quân sự hàng đầu thế giới, nhưng đã thất bại trước Việt Nam – một dân tộc nhỏ bé. Bản chất của thắng lợi nằm ở sự kết hợp biện chứng giữa **ý chí tự lực** của dân tộc và **sự ủng hộ** của các lực lượng tiến bộ toàn cầu.
             </p>
-
+            <p className="mt-4 text-base md:text-lg text-gray-700 italic">
+               Bài luận này sẽ trình bày đường lối lãnh đạo của Đảng và phân tích các dữ kiện lịch sử để khẳng định đây là sự kết hợp biện chứng giữa mục tiêu Giải phóng dân tộc và tinh thần Chủ nghĩa Quốc tế.
+            </p>
           </motion.div>
         </motion.div>
       </header>
@@ -167,65 +165,25 @@ const IntroPage: React.FC = () => {
         </section>
 
         {/* Mục II: Phân Tích Tính Chất và Ý Nghĩa Phổ Quát */}
-        <section id="tinhchat" className="pt-8">
+        <section id="tinhchat" className="pt-8 max-w-6xl mx-auto">
           <h2 className="text-4xl font-bold text-gray-900 mb-10 text-center drop-shadow-md">
             II. Phân Tích Tính Chất và Ý Nghĩa Quốc Tế của Cuộc Kháng Chiến
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
-            
-            {/* Cột 1: Tính Chất Giải Phóng Dân Tộc */}
-            <motion.div
-              className="bg-white/95 rounded-3xl shadow-2xl p-6 md:p-8 border border-green-100"
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true, amount: 0.2 }}
-              transition={{ duration: 0.6 }}
-            >
-              <div className="flex items-center gap-3 mb-4 text-green-600">
-                <FaLandmark className="text-3xl" />
-                <h3 className="text-2xl font-bold text-gray-900">1. Tính Chất Giải Phóng Dân Tộc và Thống Nhất</h3>
-              </div>
-              <ul className="space-y-4 text-lg text-gray-700 leading-relaxed">
-                <li>
-                  <span className="font-bold text-green-700">Chính nghĩa Quốc gia:</span> Đây là cuộc chiến đấu hợp pháp của dân tộc Việt Nam chống lại sự xâm lược và âm mưu chia cắt đất nước của Mỹ. Mục tiêu **Độc lập và Thống nhất** là mục tiêu chính nghĩa, được quốc tế thừa nhận.
-                </li>
-                <li>
-                  <span className="font-bold text-green-700">Sức mạnh Nội tại:</span> Thắng lợi bắt nguồn từ đường lối **"dựa vào sức mình là chính"**. Sức mạnh toàn dân, thể hiện qua phong trào "Xẻ dọc Trường Sơn đi cứu nước" và ý chí kiên cường của nhân dân hai miền, là yếu tố cốt lõi quyết định kết cục chiến tranh.
-                </li>
-              </ul>
-            </motion.div>
-
-            {/* Cột 2: Tầm Vóc Quốc Tế */}
-            <motion.div
-              className="bg-white/95 rounded-3xl shadow-2xl p-6 md:p-8 border border-blue-100"
-              initial={{ opacity: 0, x: 20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true, amount: 0.2 }}
-              transition={{ duration: 0.6 }}
-            >
-              <div className="flex items-center gap-3 mb-4 text-blue-600">
-                <FaGlobe className="text-3xl" />
-                <h3 className="text-2xl font-bold text-gray-900">2. Tầm Vóc Quốc Tế và Thời Đại</h3>
-              </div>
-              <ul className="space-y-4 text-lg text-gray-700 leading-relaxed">
-                <li>
-                  <span className="font-bold text-blue-700">Trận Tuyến Ý Thức Hệ:</span> Cuộc chiến Việt Nam là tâm điểm của Chiến tranh Lạnh, là nơi đối đầu trực diện giữa khối XHCN và khối TBCN.
-                </li>
-                <li>
-                  <span className="font-bold text-blue-700">Trận Tuyến của Chủ Nghĩa Quốc Tế:</span> Đảng luôn nhấn mạnh **"Kết hợp sức mạnh dân tộc với sức mạnh thời đại"**. Viện trợ quân sự, kỹ thuật và kinh tế khổng lồ từ các nước XHCN (Liên Xô, Trung Quốc) là đòn bẩy chiến lược.
-                </li>
-                <li>
-                  <span className="font-bold text-blue-700">Biểu Tượng Cổ Vũ Phong trào:</span> Thắng lợi trở thành biểu tượng chủ nghĩa anh hùng cách mạng, cổ vũ mạnh mẽ cho các phong trào đấu tranh chống đế quốc trên toàn thế giới, đồng thời thúc đẩy phong trào phản chiến quốc tế (như sự lên án của Noam Chomsky).
-                </li>
-              </ul>
-              <CiteBox
-                links={[
-                  { href: "#", label: "Ví dụ Học thuật: Carlyle A. Thayer về Viện trợ XHCN" },
-                  { href: "#", label: "Dẫn chứng Phong trào: Noam Chomsky và Phong trào Phản chiến" },
-                ]}
-              />
-            </motion.div>
+          
+          <div className="space-y-12">
+              {analysisData.map((item) => (
+                  <AnalysisItem
+                      key={item.id}
+                      title={item.title}
+                      subtitle={item.subtitle}
+                      content={item.content}
+                      imageSrc={item.imageSrc}
+                      links={item.links}
+                      reverse={item.reverse}
+                  />
+              ))}
           </div>
+
         </section>
 
         {/* Kết Luận (Nổi bật hơn) */}
@@ -247,9 +205,6 @@ const IntroPage: React.FC = () => {
                 "Không có gì quý hơn độc lập, tự do."
               </span>
             </p>
-            {/* <div className="mt-8 text-sm text-indigo-200">
-              *Tư liệu tham khảo: Giáo trình Lịch sử Đảng và các nguồn học thuật uy tín.*
-            </div> */}
           </div>
         </section>
       </main>
