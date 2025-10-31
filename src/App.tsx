@@ -8,6 +8,7 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import QAPage from "./pages/QAPage";
 import Musicai from "./pages/Musicai";
+import TimelinePage from "./pages/TimelinePage";
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
               <Route path="/case-study" element={<CaseStudyPage />} />
               <Route path="/qa" element={<QAPage />} />
               <Route path="/musicai" element={<Musicai />} />
+              <Route path="/Timeline" element={<TimelinePage />} />
             </Routes>
           </div>
         </main>
