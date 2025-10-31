@@ -11,6 +11,9 @@ import {
   FaUsers,
 } from "react-icons/fa6";
 
+import anh_chong_giac_my from "../assets/anh-chong-giac-my.jpeg";
+import anh_maclenin from "../assets/3ng.png";
+
 // ===== ASSETS (Dùng lại video) =====
 const videoUrl = "/assets/video/bg-family.mp4"; // Dùng làm background mờ
 
@@ -77,7 +80,7 @@ const analysisData = [
         title: "1. Tính Chất Giải Phóng Dân Tộc và Thống Nhất",
         subtitle: "Cuộc chiến đấu hợp pháp của dân tộc Việt Nam chống lại sự xâm lược và âm mưu chia cắt đất nước.",
         content: "Mục tiêu Độc lập và Thống nhất là mục tiêu tối thượng, là chính nghĩa quốc gia không thể phủ nhận, được toàn dân hai miền đồng lòng ủng hộ. Thắng lợi bắt nguồn từ đường lối \"dựa vào sức mình là chính\" của Đảng, phát huy tối đa sức mạnh nội tại qua phong trào 'Xẻ dọc Trường Sơn đi cứu nước' và ý chí kiên cường của nhân dân.",
-        imageSrc: "/src/assets/section1.jpg", // Hình ảnh Quốc hội/Biểu tượng chính quyền
+        imageSrc: anh_chong_giac_my, 
         links: [
             { href: "#", label: "Mục tiêu Độc lập và Thống nhất (Giáo trình Lịch sử Đảng)" },
             { href: "#", label: "Sức mạnh Nội tại và Đường Trường Sơn (Dẫn chứng thực tế)" },
@@ -89,7 +92,7 @@ const analysisData = [
         title: "2. Tầm Vóc Quốc Tế và Trận Tuyến Ý Thức Hệ",
         subtitle: "Chiến thắng là kết quả của sự kết hợp Sức mạnh Dân tộc với Sức mạnh Thời đại.",
         content: "Cuộc chiến Việt Nam là tâm điểm đối đầu giữa khối Xã hội Chủ nghĩa (XHCN) và Chủ nghĩa Đế quốc. Đảng đã thành công khi thực hiện nguyên tắc 'Kết hợp sức mạnh dân tộc với sức mạnh thời đại'. Viện trợ quân sự, kỹ thuật và kinh tế khổng lồ từ các nước XHCN là đòn bẩy chiến lược. Thắng lợi trở thành biểu tượng cổ vũ phong trào giải phóng dân tộc toàn cầu.",
-        imageSrc: "/src/assets/3ng.png", // Hình ảnh Marx-Engels-Lenin (Biểu tượng XHCN)
+        imageSrc: anh_maclenin, 
         links: [
             { href: "https://www.jstor.org/stable/2007886", label: "Carlyle A. Thayer: Viện trợ XHCN là nhân tố then chốt." },
             { href: "https://chomsky.info/americanpower01/", label: "Noam Chomsky và Phong trào Phản chiến Quốc tế." },

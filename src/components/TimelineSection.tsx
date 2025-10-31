@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { FaFlag, FaMicrophone, FaStar, FaChevronDown } from "react-icons/fa6";
+import binh_linh_my from "../assets/binh-linh-mi.png"; // Hình ảnh minh họa giai đoạn 1
+import vua_danh_vua_dam from "../assets/vua-danh-vua-dam.jpg"; // Hình ảnh minh họa giai đoạn 2
+import hoi_nghi_paris from "../assets/hoi-nghi-paris.jpg"; // Hình ảnh minh họa giai đoạn 3
 
 const phases = [
   {
@@ -15,7 +18,7 @@ const phases = [
       { key: "Khẩu hiệu", value: "“Tất cả để đánh thắng giặc Mỹ xâm lược” (Trích Nghị quyết Hội nghị Trung ương 11, 12)." },
       { key: "Phân tích", value: "Xác định rõ mục tiêu chiến lược và phương pháp đối phó hiệu quả với chiến lược mới của Mỹ." },
     ],
-    image: "/src/assets/section3.jpg", 
+    image: binh_linh_my, 
   },
   {
     year: "1968 – 1972",
@@ -29,7 +32,7 @@ const phases = [
       { key: "Tư tưởng", value: "Tập trung 'Đánh cho Mỹ cút, đánh cho Ngụy nhào', giữ vững nguyên tắc Độc lập, Tự do, Thống nhất." },
       { key: "Phân tích", value: "Phá vỡ âm mưu chia rẽ và chiến lược 'dùng người Đông Dương đánh người Đông Dương' của Mỹ." },
     ],
-    image: "/src/assets/landing1.jpg", 
+    image: vua_danh_vua_dam, 
   },
   {
     year: "1973 – 1975",
@@ -43,7 +46,7 @@ const phases = [
       { key: "Thời cơ", value: "Tư tưởng 'Nắm vững thời cơ' tạo tiền đề cho Chiến dịch Hồ Chí Minh lịch sử." },
       { key: "Kết quả", value: "Giải phóng hoàn toàn miền Nam, thống nhất đất nước." },
     ],
-    image: "/src/assets/section2.png", 
+    image: hoi_nghi_paris, 
   },
 ];
 
