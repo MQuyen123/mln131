@@ -186,7 +186,7 @@ const IntroPage: React.FC = () => {
 
         </section>
 
-        {/* Kết Luận (Nổi bật hơn) */}
+       {/* Kết Luận (Nổi bật hơn) */}
         <section
           id="ketluan"
           className="pt-8 relative text-center bg-gradient-to-br from-indigo-700 to-purple-800 text-white rounded-3xl shadow-2xl p-8 md:p-16 overflow-hidden transform transition-transform hover:scale-[1.01]"
@@ -199,7 +199,11 @@ const IntroPage: React.FC = () => {
 
             <FaQuoteLeft className="text-5xl mb-4 opacity-50 mx-auto text-indigo-300" />
             <p className="max-w-5xl mx-auto text-2xl leading-relaxed tracking-wide font-medium">
-              Bản chất của Cuộc kháng chiến chống Mỹ cứu nước là sự **thống nhất biện chứng** hoàn hảo. Chiến thắng vĩ đại năm 1975 là minh chứng lịch sử cho khả năng kết hợp **Sức mạnh Dân tộc** (Ý chí Độc lập) với **Sức mạnh Thời đại** (Chủ nghĩa Quốc tế), khẳng định chân lý:
+              Cuộc Kháng chiến chống Mỹ cứu nước (1965 – 1975) là một cuộc chiến tranh cách mạng vĩ đại mà bản chất là sự thống nhất giữa mục tiêu Dân tộc và trách nhiệm Quốc tế.
+              <br/><br/>
+              Nó là cuộc chiến đấu của riêng Việt Nam để giành Độc lập, Tự do và Thống nhất. Nhưng đồng thời, nó là trận tuyến quan trọng nhất của phong trào cách mạng thế giới chống lại chủ nghĩa đế quốc.
+              <br/><br/>
+              Chính nhờ sự kết hợp thành công Sức mạnh Dân tộc (ý chí tự lực) với Sức mạnh Thời đại (viện trợ và ủng hộ quốc tế) theo đường lối lãnh đạo sáng suốt của Đảng, Việt Nam đã giành được thắng lợi, góp phần vĩ đại vào sự nghiệp chung của nhân loại tiến bộ.
               <br/><br/>
               <span className="font-extrabold text-yellow-300 text-3xl md:text-4xl block mt-4">
                 "Không có gì quý hơn độc lập, tự do."

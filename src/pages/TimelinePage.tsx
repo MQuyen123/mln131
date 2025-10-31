@@ -4,6 +4,13 @@ import type React from "react"
 import { useState } from "react"
 import { ScrollReveal } from "../components/scroll-reveal"
 
+import ban_do_viet_nam from "../../public/ban-do-viet-nam.jpg"
+import so_do_khai_quat from "../../public/so-do-khai-quat.jpg"
+import cold_war_thumbnail from "../../public/cold-war-thumbnail.png.webp"
+import chu_tich_huu_tho from "../../public/chu-tich-nguyen-huu-tho.jpg"
+import don_vi_quan_giai_phong from "../../public/mot-don-vi-quan-giai-phong-mien-nam.-anh-bao-tang-lich-su-viet-nam-600x340.jpg"
+import ke_thu_chinh from "../../public/images.jfif"
+
 interface Section {
   id: string
   title: string
@@ -17,7 +24,7 @@ const SECTIONS: Section[] = [
     id: "domestic",
     title: "Bối Cảnh\nĐất Nước",
     accentColor: "from-cyan-400 to-cyan-300",
-    image: "public/ban-do-viet-nam.jpg",
+    image: ban_do_viet_nam,
     content: (
       <div className="space-y-6">
         <ScrollReveal direction="up" delay={0}>
@@ -119,7 +126,7 @@ const SECTIONS: Section[] = [
     id: "international",
     title: "Bối Cảnh\nQuốc Tế",
     accentColor: "from-purple-400 to-pink-400",
-    image: "public/cold-war-thumbnail.png.webp",
+    image: cold_war_thumbnail,
     content: (
       <div className="space-y-6">
         <ScrollReveal direction="up" delay={0}>
@@ -228,7 +235,7 @@ const SECTIONS: Section[] = [
     id: "enemy",
     title: "Kẻ Thù\nChính",
     accentColor: "from-yellow-400 to-yellow-300",
-    image: "public/images.jfif",
+    image: ke_thu_chinh,
     content: (
       <div className="space-y-6">
         <ScrollReveal direction="up" delay={0}>
@@ -370,7 +377,7 @@ const SECTIONS: Section[] = [
     id: "forces",
     title: "Lực Lượng\nCách Mạng",
     accentColor: "from-green-400 to-emerald-400",
-    image: "public/chu-tich-nguyen-huu-tho.jpg",
+    image: chu_tich_huu_tho,
     content: (
       <div className="space-y-6">
         <ScrollReveal direction="up" delay={0}>
@@ -558,7 +565,7 @@ const SECTIONS: Section[] = [
     id: "timeline",
     title: "Dòng Thời\nGian Chính",
     accentColor: "from-orange-400 to-red-400",
-    image: "public/489463943_1180009614135806_6831365441873026343_n.jpg",
+    image: so_do_khai_quat,
     content: (
       <div className="space-y-8">
         {/* PHASE 1: Diễn Biến Ở Miền Bắc */}
@@ -867,7 +874,7 @@ const SECTIONS: Section[] = [
     id: "resistance",
     title: "Cuộc Kháng\nChiến Nổi Lên",
     accentColor: "from-red-500 to-rose-400",
-    image: "public/mot-don-vi-quan-giai-phong-mien-nam.-anh-bao-tang-lich-su-viet-nam-600x340.jpg",
+    image: don_vi_quan_giai_phong,
     content: (
       <div className="space-y-4">
         <p className="leading-relaxed text-gray-300">
