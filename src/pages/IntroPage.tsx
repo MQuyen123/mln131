@@ -151,11 +151,9 @@ const IntroPage: React.FC = () => {
           </motion.p>
           <motion.div variants={fadeInUp} className="max-w-4xl mx-auto mt-6">
             <p className="text-base md:text-lg text-gray-700">
-              Mỹ là cường quốc quân sự hàng đầu thế giới, nhưng đã thất bại trước Việt Nam – một dân tộc nhỏ bé. Bản chất của thắng lợi nằm ở sự kết hợp biện chứng giữa **ý chí tự lực** của dân tộc và **sự ủng hộ** của các lực lượng tiến bộ toàn cầu.
+              Mỹ là cường quốc quân sự hàng đầu thế giới, nhưng đã thất bại trước Việt Nam – một dân tộc nhỏ bé. Bản chất của thắng lợi nằm ở sự kết hợp biện chứng giữa ý chí tự lực của dân tộc và sự ủng hộ của các lực lượng tiến bộ toàn cầu.
             </p>
-            <p className="mt-4 text-base md:text-lg text-gray-700 italic">
-               Bài luận này sẽ trình bày đường lối lãnh đạo của Đảng và phân tích các dữ kiện lịch sử để khẳng định đây là sự kết hợp biện chứng giữa mục tiêu Giải phóng dân tộc và tinh thần Chủ nghĩa Quốc tế.
-            </p>
+    
           </motion.div>
         </motion.div>
       </header>
