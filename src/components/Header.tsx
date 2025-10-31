@@ -5,7 +5,8 @@ import Logo from "../../public/logo.webp";
 
 const menu = [
   { label: "Home", to: "/intro" },
-  { label: "Quiz", to: "/quiz" },
+  { label: "Timeline", to: "/Timeline" },
+  //{ label: "Quiz", to: "/quiz" },
   // { label: "Chatbot", to: "/chatbot" },
   { label: "AI Usage Report", to: "/case-study" },
   { label: "Music ", to: "/musicai" },
